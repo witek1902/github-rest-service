@@ -4,7 +4,6 @@ import witkowski.robert.github.rest.service.domain.dto.GhRepositoryDto;
 
 import java.io.IOException;
 import java.util.Collection;
-import java.util.List;
 
 public interface GhRepositoryService {
 

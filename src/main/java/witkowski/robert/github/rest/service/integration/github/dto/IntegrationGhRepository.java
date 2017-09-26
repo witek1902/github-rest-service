@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Getter;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 @Getter
 public class IntegrationGhRepository implements Serializable {

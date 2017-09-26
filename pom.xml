@@ -6,9 +6,6 @@
 	<groupId>witkowski.robert</groupId>
 	<artifactId>github-rest-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<modules>
-		<module>github-rest-service-performance-test</module>
-	</modules>
 	<packaging>pom</packaging>
 
 	<name>github-rest-service</name>

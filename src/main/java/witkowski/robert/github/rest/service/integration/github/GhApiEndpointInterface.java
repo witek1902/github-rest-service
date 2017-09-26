@@ -6,7 +6,6 @@ import retrofit2.http.Path;
 import witkowski.robert.github.rest.service.integration.github.dto.IntegrationGhRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface GhApiEndpointInterface {
 
