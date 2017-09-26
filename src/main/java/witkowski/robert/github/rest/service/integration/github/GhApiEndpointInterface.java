@@ -11,6 +11,7 @@ public interface GhApiEndpointInterface {
 
     /**
      * Get repository list from selected user
+     *
      * @param username - owner
      * @return
      */
@@ -19,7 +20,8 @@ public interface GhApiEndpointInterface {
 
     /**
      * Find information about repository name in selected user repository list
-     * @param username - owner
+     *
+     * @param username       - owner
      * @param repositoryName - repository name
      * @return
      */

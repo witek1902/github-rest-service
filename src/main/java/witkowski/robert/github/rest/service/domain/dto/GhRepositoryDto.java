@@ -18,18 +18,14 @@ public class GhRepositoryDto implements Serializable {
     private final int stars;
     private final String createdAt;
 
-    @JsonIgnore
-    public boolean isEmpty() {
-        return id == null;
-    }
-
     /**
      * Map entity from integration module to DTO
+     *
      * @param repo - integration entity
      * @return
      */
     public static GhRepositoryDto createFromIntegration(IntegrationGhRepository repo) {
-        if(repo == null) {
+        if (repo == null) {
             return empty();
         }
         return GhRepositoryDto.builder()
@@ -44,9 +40,15 @@ public class GhRepositoryDto implements Serializable {
 
     /**
      * Empty DTO (Null Object Pattern)
+     *
      * @return
      */
     public static GhRepositoryDto empty() {
         return GhRepositoryDto.builder().build();
+    }
+
+    @JsonIgnore
+    public boolean isEmpty() {
+        return id == null;
     }
 }

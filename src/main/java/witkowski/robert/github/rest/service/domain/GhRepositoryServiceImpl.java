@@ -36,7 +36,7 @@ class GhRepositoryServiceImpl implements GhRepositoryService {
     }
 
     private Collection<GhRepositoryDto> createResponseList(List<IntegrationGhRepository> responseBody) {
-        if(CollectionUtils.isEmpty(responseBody)) {
+        if (CollectionUtils.isEmpty(responseBody)) {
             return new ArrayList<>();
         }
         return responseBody.stream()

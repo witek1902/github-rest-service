@@ -6,6 +6,7 @@ package witkowski.robert.github.rest.service.integration.common;
 public interface PropertyProvider {
     /**
      * Get property for selected key. If property not exists - method should throws one of RuntimeException.
+     *
      * @param key - Key of property
      * @return - String with property value.
      */
