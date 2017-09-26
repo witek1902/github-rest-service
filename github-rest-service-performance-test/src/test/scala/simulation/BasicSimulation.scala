@@ -3,7 +3,7 @@ import io.gatling.http.Predef._
 
 class BasicSimulation extends Simulation {
 
-  val users: Int = 1
+  val users: Int = 20
   val baseUrl: String = "http://localhost:8080"
 
   val httpConf = http
