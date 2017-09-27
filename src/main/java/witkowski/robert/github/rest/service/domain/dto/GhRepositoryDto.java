@@ -24,7 +24,7 @@ public class GhRepositoryDto implements Serializable {
      * @param repo - integration entity
      * @return
      */
-    public static GhRepositoryDto createFromIntegration(IntegrationGhRepository repo) {
+    public static GhRepositoryDto createFromIntegrationEntity(IntegrationGhRepository repo) {
         if (repo == null) {
             return empty();
         }
