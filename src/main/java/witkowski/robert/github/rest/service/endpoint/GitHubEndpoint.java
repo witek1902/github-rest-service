@@ -1,5 +1,6 @@
 package witkowski.robert.github.rest.service.endpoint;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,20 +20,21 @@ import java.util.Collection;
 @RestController
 @RequestMapping("repositories")
 @Slf4j
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 class GitHubEndpoint {
-    @Autowired
-    private GhRepositoryService ghRepositoryService;
+
+    private final GhRepositoryService ghRepositoryService;
 
     @RequestMapping(value = "/{owner}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     Collection<GhRepositoryDto> findAllRepositoriesForOwner(@PathVariable String owner) throws IOException {
-        log.info(String.format("findAllRepositoriesForOwner > start. Params: owner = %s", owner));
+        log.info("findAllRepositoriesForOwner > start. Params: owner = " + owner);
         Collection<GhRepositoryDto> repos = ghRepositoryService.findAllBy(owner);
         return repos;
     }
 
     @RequestMapping(value = "/{owner}/{repositoryName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     GhRepositoryDto findRepositoryForOwner(@PathVariable String owner, @PathVariable String repositoryName) throws IOException {
-        log.info(String.format("findRepositoryForOwner > start. Params: owner = %s, repositoryName = %s", owner, repositoryName));
+        log.info("findRepositoryForOwner > start. Params: owner = " + owner + ", repositoryName = %s" + repositoryName);
         GhRepositoryDto repo = ghRepositoryService.findOne(owner, repositoryName);
         if (repo.isEmpty()) {
             throw new RepositoryNotFoundException(owner, repositoryName);
