@@ -13,7 +13,7 @@ public interface GhRepositoryService {
      * @param username - owner
      * @return
      */
-    Collection<GhRepositoryDto> findAllBy(String username) throws IOException;
+    Collection<GhRepositoryDto> findAllBy(String username);
 
     /**
      * Find information about repository name in selected user repository list.
@@ -23,5 +23,5 @@ public interface GhRepositoryService {
      * @param repositoryName - repository name
      * @return
      */
-    GhRepositoryDto findOne(String username, String repositoryName) throws IOException;
+    GhRepositoryDto findOne(String username, String repositoryName);
 }

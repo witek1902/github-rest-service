@@ -25,16 +25,16 @@ class GitHubEndpoint {
 
     private final GhRepositoryService ghRepositoryService;
 
-    @RequestMapping(value = "/{owner}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{owner:.+}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     Collection<GhRepositoryDto> findAllRepositoriesForOwner(@PathVariable String owner) throws IOException {
         log.info("findAllRepositoriesForOwner > start. Params: owner = " + owner);
         Collection<GhRepositoryDto> repos = ghRepositoryService.findAllBy(owner);
         return repos;
     }
 
-    @RequestMapping(value = "/{owner}/{repositoryName}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{owner}/{repositoryName:.+}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     GhRepositoryDto findRepositoryForOwner(@PathVariable String owner, @PathVariable String repositoryName) throws IOException {
-        log.info("findRepositoryForOwner > start. Params: owner = " + owner + ", repositoryName = %s" + repositoryName);
+        log.info("findRepositoryForOwner > start. Params: owner = " + owner + ", repositoryName = " + repositoryName);
         GhRepositoryDto repo = ghRepositoryService.findOne(owner, repositoryName);
         if (repo.isEmpty()) {
             throw new RepositoryNotFoundException(owner, repositoryName);
