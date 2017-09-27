@@ -6,14 +6,8 @@ package witkowski.robert.github.rest.service.validation;
 public class ArgAssert {
 
     public static void isNotBlank(String text) {
-        if (text == null || "".equals(text)) {
+        if (text == null || text.isEmpty()) {
             throw new ArgAssertException("String is blank!");
-        }
-    }
-
-    public static void isNotBlank(String... texts) {
-        for (int i = 0; i < texts.length; i++) {
-            isNotBlank(texts[i]);
         }
     }
 }
