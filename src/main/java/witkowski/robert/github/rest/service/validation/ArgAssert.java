@@ -1,9 +1,14 @@
 package witkowski.robert.github.rest.service.validation;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+import org.omg.CORBA.PRIVATE_MEMBER;
+
 /**
  * Simple arguments validation. Instead this we could annotation validations (for example @NonNull)
  */
-public class ArgAssert {
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
+public final class ArgAssert {
 
     public static void isNotBlank(String text) {
         if (text == null || text.isEmpty()) {
