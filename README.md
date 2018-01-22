@@ -1,8 +1,10 @@
-# GitHub REST Service Example
+# GitHub API Client and REST Endpoint Example
 
-- I use **Maven**, because I use it every day,
-- I use **Retrofit** as HTTP client, because I wanted to try something different than the standard **RestTemplate** HTTP Client (used only in tests),
-- Package **integration** could be separate module and then could be create parent project (parent pom.xml) and a lot of child projects,
+1. **Integration** package - Github API client example.
+2. **Endpoint** package - REST API example.
+
+## Real world vs. example
+- In real world package **integration** could be separate module and then could be create parent project (parent pom.xml) and a lot of child projects,
 - In real world should be added pagination and sorting to endpoint,
 - In real world dependencies should be manage by dependencyManagement in parent pom.xml,
 - In real world I should logger configure for example by aspects,
@@ -10,7 +12,12 @@
 - In real world exceptions from integration must be better handled,
 - In real world API should limit requests (for example, to prevent DDoS attacks).
 
-## Performance test
+## Run application
+````
+mvn spring-boot:run
+````
+
+## Run performance test
 I created tests with **Gatling** and wrote in Scala. \
 First run **REST Service** and next run tests:
 ````
