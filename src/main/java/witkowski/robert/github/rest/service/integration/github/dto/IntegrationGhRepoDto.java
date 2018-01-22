@@ -6,7 +6,7 @@ import lombok.Getter;
 import java.io.Serializable;
 
 @Getter
-public class IntegrationGhRepository implements Serializable {
+public class IntegrationGhRepoDto implements Serializable {
 
     @SerializedName("id")
     private Long id;

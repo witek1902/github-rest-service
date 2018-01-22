@@ -3,7 +3,7 @@ package witkowski.robert.github.rest.service.domain.dto;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Getter;
-import witkowski.robert.github.rest.service.integration.github.dto.IntegrationGhRepository;
+import witkowski.robert.github.rest.service.integration.github.dto.IntegrationGhRepoDto;
 
 import java.io.Serializable;
 
@@ -24,7 +24,7 @@ public class GhRepositoryDto implements Serializable {
      * @param repo - integration entity
      * @return
      */
-    public static GhRepositoryDto createFromIntegrationEntity(IntegrationGhRepository repo) {
+    public static GhRepositoryDto createFromIntegrationEntity(IntegrationGhRepoDto repo) {
         if (repo == null) {
             return empty();
         }

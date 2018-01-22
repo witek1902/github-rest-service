@@ -8,7 +8,7 @@ import org.springframework.util.CollectionUtils;
 import retrofit2.Response;
 import witkowski.robert.github.rest.service.domain.dto.GhRepositoryDto;
 import witkowski.robert.github.rest.service.integration.github.GitHubApiClient;
-import witkowski.robert.github.rest.service.integration.github.dto.IntegrationGhRepository;
+import witkowski.robert.github.rest.service.integration.github.dto.IntegrationGhRepoDto;
 import witkowski.robert.github.rest.service.validation.ArgAssert;
 
 import java.util.ArrayList;
@@ -27,14 +27,14 @@ class GhRepositoryServiceImpl implements GhRepositoryService {
     public Collection<GhRepositoryDto> findAllBy(String username) {
         ArgAssert.isNotBlank(username);
 
-        Response<List<IntegrationGhRepository>> response = gitHubApiClient.findAllBy(username);
+        Response<List<IntegrationGhRepoDto>> response = gitHubApiClient.findAllBy(username);
 
         return response.isSuccessful()
                 ? createResponseList(response.body())
                 : new ArrayList<>();
     }
 
-    private Collection<GhRepositoryDto> createResponseList(List<IntegrationGhRepository> responseBody) {
+    private Collection<GhRepositoryDto> createResponseList(List<IntegrationGhRepoDto> responseBody) {
         if (CollectionUtils.isEmpty(responseBody)) {
             return new ArrayList<>();
         }
@@ -48,7 +48,7 @@ class GhRepositoryServiceImpl implements GhRepositoryService {
         ArgAssert.isNotBlank(username);
         ArgAssert.isNotBlank(repositoryName);
 
-        Response<IntegrationGhRepository> response = gitHubApiClient.findOne(username, repositoryName);
+        Response<IntegrationGhRepoDto> response = gitHubApiClient.findOne(username, repositoryName);
 
         //In this place we could throw one of BusinessException instead return empty dto.
         //This behaviour is depend of business requirement.

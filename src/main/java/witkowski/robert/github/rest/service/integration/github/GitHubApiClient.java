@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import retrofit2.Call;
 import retrofit2.Response;
-import witkowski.robert.github.rest.service.integration.github.dto.IntegrationGhRepository;
+import witkowski.robert.github.rest.service.integration.github.dto.IntegrationGhRepoDto;
 import witkowski.robert.github.rest.service.integration.github.exception.GithubIOException;
 
 import java.io.IOException;
@@ -19,13 +19,13 @@ public class GitHubApiClient {
 
     private final GhApiEndpointInterface ghApi;
 
-    public Response<List<IntegrationGhRepository>> findAllBy(String username) {
-        Call<List<IntegrationGhRepository>> call = ghApi.findAllBy(username);
+    public Response<List<IntegrationGhRepoDto>> findAllBy(String username) {
+        Call<List<IntegrationGhRepoDto>> call = ghApi.findAllBy(username);
         return processCall(call);
     }
 
-    public Response<IntegrationGhRepository> findOne(String username, String repositoryName) {
-        Call<IntegrationGhRepository> call = ghApi.findOne(username, repositoryName);
+    public Response<IntegrationGhRepoDto> findOne(String username, String repositoryName) {
+        Call<IntegrationGhRepoDto> call = ghApi.findOne(username, repositoryName);
         return processCall(call);
     }
 
