@@ -2,7 +2,6 @@ package witkowski.robert.github.rest.service.validation;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 /**
  * Simple arguments validation. Instead this we could annotation validations (for example @NonNull)
