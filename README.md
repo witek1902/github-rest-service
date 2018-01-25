@@ -1,4 +1,4 @@
-# GitHub API Client and REST Endpoint Example
+# Java (Spring) GitHub API Client and REST Endpoint Example
 
 1. **Integration** package - Github API client example.
 2. **Endpoint** package - REST API example.
